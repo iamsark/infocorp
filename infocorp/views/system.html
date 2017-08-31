@@ -10,8 +10,6 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
 		
 		<title>InfoCorp - System View</title>
-	
-		<link rel="shortcut icon" href="assets/img/favico.png">
 		
 		<link rel="shortcut icon" href="assets/img/cropped-ict-favicon-32x32.png" sizes="32x32" />
 		<link rel="shortcut icon" href="assets/img/cropped-ict-favicon-192x192.png" sizes="192x192" />
@@ -23,33 +21,38 @@
 		<link rel="stylesheet" type="text/css" href="assets/css/system.css" >
 		
 		<script type="text/javascript" src="assets/js/lib/jquery-3.2.1.min.js"></script>
+		
+		<script type="text/javascript" src="assets/js/system/config.js"></script>
+		<script type="text/javascript" src="assets/js/system/controller.js"></script>
 	
 	</head>
 	
 	<body>
 	
-		<header class="infocorp-header-container">
+		<header class="ic-header-container">
 			<div class="container-fluid">
-				<div class="row infocorp-header-row">
+				<div class="row ic-header-row">
 					<div class="col-sm-3">
-						<a href="#" class="infocorp-logo-tag">
+						<a href="#" class="ic-logo-tag">
 							<h3><img src="assets/img/logo-part.png" /> System</h3>
 						</a>
 					</div>
 					<div class="col-sm-21">
-						<div class="infocorp-breadcrumb-container">
-						
+						<div class="ic-breadcrumb-container">
+							<h1 id="ic-workarea-header"><i class="fa fa-home"></i> Dashboard</h1>
+							<div id="ic-top-action-bar"></div>
+							<span id="ic-progress-notification">Loading...</span>
 						</div>
 					</div>
 				</div>
 			</div>
 		</header>
 		
-		<div class="infocorp-body-container">
+		<div class="ic-body-container">
 			<div class="container-fluid">
-				<div class="row infocorp-body-row">
-					<div class="col-sm-3 infocorp-sidebar-container">
-						<div class="infocorp-sidebar-user-widget">
+				<div class="row ic-body-row">
+					<div class="col-sm-3 ic-sidebar-container">
+						<div class="ic-sidebar-user-widget">
 							<table>
 								<tr>
 									<td><i class="fa fa-user"></i></td>
@@ -60,19 +63,112 @@
 								</tr>
 							</table>
 						</div>
-						<ul id="infocorp-primary-nav">
-							<li><a href=""><i class="fa fa-link"></i> Block Chains</a></li>
-							<li><a href=""><i class="fa fa-address-card"></i> Merchants</a></li>
-							<li><a href=""><i class="fa fa-microchip"></i> Modules</a></li>
-							<li><a href=""><i class="fa fa-gear"></i> Dictionary</a></li>
-							<li><a href=""><i class="fa fa-sitemap"></i> Navigations</a></li>							
-							<li><a href=""><i class="fa fa-users"></i> Users</a></li>
-							<li><a href=""><i class="fa fa-tags"></i> Roles</a></li>								
-							<li><a href=""><i class="fa fa-wrench"></i> Preferences</a></li>
+						<ul id="ic-primary-nav">
+							<li><a href="#" data-context="block_chain" data-title="Block Chains"><i class="fa fa-link"></i> Block Chains</a></li>
+							<li><a href="#" data-context="merchant" data-title="Merchants"><i class="fa fa-address-card"></i> Merchants</a></li>
+							<li><a href="#" data-context="module" data-title="MOdules"><i class="fa fa-microchip"></i> Modules</a></li>
+							<li><a href="#" data-context="dictionary" data-title="Dictionary"><i class="fa fa-gear"></i> Dictionary</a></li>
+							<li><a href="#" data-context="navigation" data-title="Navigations"><i class="fa fa-sitemap"></i> Navigations</a></li>							
+							<li><a href="#" data-context="user" data-title="Users"><i class="fa fa-users"></i> Users</a></li>
+							<li><a href="#" data-context="role" data-title="Roles"><i class="fa fa-tags"></i> Roles</a></li>								
+							<li><a href="#" data-context="preference" data-title="Preferences"><i class="fa fa-wrench"></i> Preferences</a></li>
 						</ul>
 					</div>
 					<div class="col-sm-21">					
 						
+						<div id="ic-system-workspace">
+						
+							<div id="ic-system-block_chain">
+								<div id="ic-system-block_chain-archive" class="ic-system-view">
+								
+								</div>
+								<div id="ic-system-block_chain-single" class="ic-system-view">
+								
+								</div>
+								<div id="ic-system-block_chain-create" class="ic-system-view">
+								
+								</div>
+							</div>
+						
+							<div id="ic-system-merchant">
+								<div id="ic-system-merchant-archive" class="ic-system-view">
+								
+								</div>
+								<div id="ic-system-merchant-single" class="ic-system-view">
+								
+								</div>
+								<div id="ic-system-merchant-create" class="ic-system-view">
+								
+								</div>
+							</div>
+							
+							<div id="ic-system-module">
+								<div id="ic-system-module-archive" class="ic-system-view">
+								
+								</div>
+								<div id="ic-system-module-single" class="ic-system-view">
+								
+								</div>
+								<div id="ic-system-module-create" class="ic-system-view">
+								
+								</div>
+							</div>
+							
+							<div id="ic-system-dictionary">
+								<div id="ic-system-dictionary-archive" class="ic-system-view">
+								
+								</div>
+								<div id="ic-system-dictionary-single" class="ic-system-view">
+								
+								</div>
+								<div id="ic-system-dictionary-create" class="ic-system-view">
+								
+								</div>
+							</div>
+							
+							<div id="ic-system-navigation">
+								<div id="ic-system-navigation-archive" class="ic-system-view">
+								
+								</div>
+								<div id="ic-system-navigation-single" class="ic-system-view">
+								
+								</div>
+								<div id="ic-system-navigation-create" class="ic-system-view">
+								
+								</div>
+							</div>
+							
+							<div id="ic-system-user">
+								<div id="ic-system-user-archive" class="ic-system-view">
+								
+								</div>
+								<div id="ic-system-user-single" class="ic-system-view">
+								
+								</div>
+								<div id="ic-system-user-create" class="ic-system-view">
+								
+								</div>
+							</div>
+							
+							<div id="ic-system-role">
+								<div id="ic-system-role-archive" class="ic-system-view">
+								
+								</div>
+								<div id="ic-system-role-single" class="ic-system-view">
+								
+								</div>
+								<div id="ic-system-role-create" class="ic-system-view">
+								
+								</div>
+							</div>
+							
+							<div id="ic-system-preference">
+								<div id="ic-system-preference-view" class="ic-system-view">
+								
+								</div>								
+							</div>
+						
+						</div>
 						
 					</div>
 				</div>
