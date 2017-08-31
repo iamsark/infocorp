@@ -40,6 +40,7 @@ var icGrid = function(_cobj, _container, _meta, _name) {
 	
 	this.init = function() {
 		
+		
 	};
 	
 	/* Renders the skeleton structure for the Data Grid */
